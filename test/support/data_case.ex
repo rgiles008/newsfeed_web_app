@@ -22,6 +22,7 @@ defmodule RbApp.DataCase do
       import Ecto.Changeset
       import Ecto.Query
       import RbApp.DataCase
+      import RbApp.Factory
     end
   end
 
