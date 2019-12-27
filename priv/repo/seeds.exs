@@ -1,11 +1,20 @@
-# Script for populating the database. You can run it as:
-#
-#     mix run priv/repo/seeds.exs
-#
-# Inside the script, you can read and write to any of your
-# repositories directly:
-#
-#     RbApp.Repo.insert!(%RbApp.SomeSchema{})
-#
-# We recommend using the bang functions (`insert!`, `update!`
-# and so on) as they will fail if something goes wrong.
+alias RbApp.{Repo, Website}
+
+site_params = [
+  %{
+    url: "https://www.test-site.com",
+    website_title: "Breanna's Website",
+    api_key: "03545130-2cd7-40d7-bb11-fea060250890"
+  },
+  %{
+    url: "https://www.test.com",
+    website_title: "Robert's Website",
+    api_key: "03545130-2cd7-40d7-bb11-bca191250970"
+  }
+]
+
+_websites =
+  site_params
+  |> Enum.map(fn params ->
+    %Website{} |> Website.changeset(params) |> Repo.insert!()
+  end)
