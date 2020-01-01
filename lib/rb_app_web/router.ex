@@ -11,6 +11,8 @@ defmodule RbAppWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+
+    put "/websites", WebsiteController, :create_website
   end
 
   scope "/", RbAppWeb do
