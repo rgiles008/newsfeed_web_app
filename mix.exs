@@ -45,7 +45,8 @@ defmodule RbApp.MixProject do
       {:plug_cowboy, "~> 1.0"},
       {:ex_machina, "~> 2.0"},
       {:mock,"~> 0.3.4", only: :test},
-      {:plug, "~> 1.8"}
+      {:plug, "~> 1.8"},
+      {:poison, "~> 3.1"}
     ]
   end
 

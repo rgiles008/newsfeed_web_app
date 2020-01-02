@@ -16,6 +16,15 @@ defmodule RbApp.Website do
     :url
   ]
 
+  @derive {
+    Jason.Encoder,
+      only: [
+        :url,
+        :website_title,
+        :api_key
+        ]
+      }
+
   schema "websites" do
     field(:url, :string)
     field(:website_title, :string)

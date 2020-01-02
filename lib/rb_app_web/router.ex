@@ -12,17 +12,20 @@ defmodule RbAppWeb.Router do
   pipeline :api do
     plug :accepts, ["json"]
 
-    put "/websites", WebsiteController, :create_website
   end
 
   scope "/", RbAppWeb do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/about", AboutController, :about
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", RbAppWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", RbAppWeb do
+    pipe_through :api
+
+    put "/websites", WebsiteController, :create_website
+
+  end
 end
