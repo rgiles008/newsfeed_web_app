@@ -1,0 +1,37 @@
+
+
+<section class="row">
+  <h1>All News Outlets</h1>
+
+</section>
+
+<section class="row">
+
+<table>
+<thead>
+    <tr>
+      <th>News Source</th>
+      <th></th>
+      <th></th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= for site <- @sources do %>
+        <tr>
+            <td><%=site.name %></td>
+            <td></td>
+            <td></td>
+            <td><%= link "Top Headlines", to: Routes.feed_path(@conn, :show, site.website_id), class: "button" %> </td>
+            
+        </tr>
+    <% end %>
+    </tbody>
+</table>
+</section>
+<section class="row">
+  <article class="column">
+
+
+  </article>    
+</section>

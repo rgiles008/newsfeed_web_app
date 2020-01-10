@@ -54,7 +54,7 @@ config :phoenix, :plug_init_mode, :runtime
 # Configure your database
 config :rb_app, RbApp.Repo,
   username: "postgres",
-  password: "postgres",
+  password: System.get_env("POSTGRES_PASSWORD"),
   database: "rb_app_dev",
   hostname: "localhost",
   pool_size: 10

@@ -10,9 +10,13 @@ defmodule RbApp.WebsiteTest do
   describe "changesets" do
     test "should return valid changeset with valid attrs" do
       valid_attrs = %{
+        website_id: "some-name",
+        name: "some-text",
+        description: "description",
         url: "https://www.website.com",
-        website_title: "test site",
-        api_key: "some_key"
+        category: "category",
+        language: "en",
+        country: "us"
       }
 
       changeset = %Website{} |> Website.changeset(valid_attrs)
@@ -25,9 +29,10 @@ defmodule RbApp.WebsiteTest do
       refute changeset.valid?
 
       required_keys = [
+        :website_id,
+        :name,
         :url,
-        :website_title,
-        :api_key
+        :country
       ]
 
       has_all =

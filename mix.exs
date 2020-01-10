@@ -35,7 +35,7 @@ defmodule RbApp.MixProject do
     [
       {:phoenix, "~> 1.4"},
       {:phoenix_pubsub, "~> 1.0", override: true},
-      {:phoenix_ecto, "~> 3.2"},
+      {:phoenix_ecto, ">= 3.2.0 and < 3.5.0"},
       {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 2.11"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
@@ -44,7 +44,13 @@ defmodule RbApp.MixProject do
       {:cowboy, "~> 1.0"},
       {:plug_cowboy, "~> 1.0"},
       {:ex_machina, "~> 2.0"},
-    ]
+      {:mock,"~> 0.3.4", only: :test},
+      {:plug, "~> 1.8"},
+      {:poison, "~> 3.1"},
+      {:httpoison, "~> 1.6"}
+      # {:filtrex, "~> 0.4.3"},
+      # {:phoenix_live_view, "~> 0.3.1"} 
+       ]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

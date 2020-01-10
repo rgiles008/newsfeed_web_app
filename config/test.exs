@@ -12,7 +12,7 @@ config :logger, level: :warn
 # Configure your database
 config :rb_app, RbApp.Repo,
   username: "postgres",
-  password: "postgres",
+  password: System.get_env("POSTGRES_PASSWORD"),
   database: "rb_app_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
