@@ -11,7 +11,6 @@ config :rb_app,
 
 # Configures the endpoint
 config :rb_app, RbAppWeb.Endpoint,        
-  # live_view: [signing_salt: "nXhhYArrUcqfQXM0jqal1XOgB9moT00F"],
   url: [host: "localhost"],
   secret_key_base: "3f4WXYQmVPS5/BdWlIqxFRMsSe5gmrholv1Mf+OqUa3DFTusnQEqjA7IZhmHOwPa",
   render_errors: [view: RbAppWeb.ErrorView, accepts: ~w(html json)],
