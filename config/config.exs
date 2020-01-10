@@ -10,7 +10,8 @@ config :rb_app,
   ecto_repos: [RbApp.Repo]
 
 # Configures the endpoint
-config :rb_app, RbAppWeb.Endpoint,
+config :rb_app, RbAppWeb.Endpoint,        
+  # live_view: [signing_salt: "nXhhYArrUcqfQXM0jqal1XOgB9moT00F"],
   url: [host: "localhost"],
   secret_key_base: "3f4WXYQmVPS5/BdWlIqxFRMsSe5gmrholv1Mf+OqUa3DFTusnQEqjA7IZhmHOwPa",
   render_errors: [view: RbAppWeb.ErrorView, accepts: ~w(html json)],
@@ -24,7 +25,6 @@ config :logger, :console,
 
 # Use Jason for JSON parsing in Phoenix and Ecto
 config :phoenix, :json_library, Jason
-config :ecto, :json_library, Jason
 
 
 # Import environment specific config. This must remain at the bottom

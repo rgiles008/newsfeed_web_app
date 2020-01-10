@@ -1,0 +1,29 @@
+<table>
+  <thead>
+    <tr>
+      <td><h1>Top Headlines</h1> <%= link "Back to Sources", to: Routes.feed_path(@conn, :index), class: "button" %></td>
+    </tr>
+  </thead>
+</table>
+
+<table>
+<thead>
+    <tr>
+      <th>Article Image</th>
+      <th>Article Title</th>
+      <th></th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= for head <- @headlines do %>
+        <tr>
+            <td><img alt=" No Image to Display" src= <%= head.urlToImage %> /></td>
+            <td><%= head.title %></td>
+            <td><%=  %></td>
+            <td><%= link "Read Article", to: head.url, class: "button" %></td>
+
+        </tr>
+    <% end %>
+    </tbody>
+</table>

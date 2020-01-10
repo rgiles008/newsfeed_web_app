@@ -18,14 +18,13 @@ defmodule RbAppWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    get "/about", AboutController, :about
+    resources "/about", AboutController
+    resources "/feed", FeedController, only: [:index, :show]
   end
 
   # Other scopes may use custom stacks.
   scope "/api", RbAppWeb do
     pipe_through :api
-
-    put "/websites", WebsiteController, :create_website
 
   end
 end
