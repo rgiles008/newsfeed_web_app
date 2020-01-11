@@ -1,7 +1,9 @@
 defmodule RbApp.ApiClient do
+    @moduledoc """
+        Client for api service
+    """
     # alias RbApp.{Article, Source} # use if not using a db
     alias RbApp.Article
-    
 
     @doc """
     Sends an HTTP GET request to `NewsApi` and
@@ -31,13 +33,11 @@ defmodule RbApp.ApiClient do
                             {:ok, parsed} -> {ok, parsed}
                                 _-> {:error, body}
                             end
-                
+
                 end
-                  
+
                 end).()
                 |> elem(1) # Grab second element in list, in this case, the list of Article structs or News Source maps.
                 |> Map.get(struct_type) # Grab list using map key. Ex. articles: [%Article{}, %Article{},...] or "sources:" => [%{"website_id" => "value", "name", "value",...}]
     end
-
-
 end

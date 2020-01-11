@@ -5,18 +5,18 @@ defmodule RbApp.Repo.Migrations.CreateWebsitesTable do
       create table(:websites) do
         add(:website_id, :string)
         add(:name, :string)
-        add(:description, :string)
+        add(:description, :string, size: 400)
         add(:url, :string)
         add(:category, :string)
         add(:language, :string)
         add(:country, :string)
-    
-  
+
+
         timestamps()
       end
 
       create unique_index(:websites, [:website_id])
 
     end
-  
+
 end

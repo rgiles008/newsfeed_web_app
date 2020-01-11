@@ -1,8 +1,6 @@
 defmodule RbApp.Website do
   use RbApp.Model, :model
-
   import Ecto.Query, warn: false
-
 
   @moduledoc """
   Context for website data
@@ -56,11 +54,8 @@ defmodule RbApp.Website do
     struct
     |> cast(params, @fields)
     |> validate_required(@required)
+    |> unique_constraint(:website_id, name: :uniqu_website_id)
   end
-
-
-
-
 
   # -------------------------------------------------------------------
 
@@ -69,11 +64,10 @@ defmodule RbApp.Website do
   # defp filter_config(:websites) do
   #   defconfig do
   #       text :language
-        
+
   #        #TODO add config for creditLimit of type decimal
   #   end
   # end
-
 
   # Use for filter feature for future project.
 
@@ -86,5 +80,4 @@ defmodule RbApp.Website do
   #     {:error, _error} -> []
   #   end
   # end
-
 end

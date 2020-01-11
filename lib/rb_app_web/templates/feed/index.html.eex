@@ -23,7 +23,7 @@
             <td></td>
             <td></td>
             <td><%= link "Top Headlines", to: Routes.feed_path(@conn, :show, site.website_id), class: "button" %> </td>
-            
+
         </tr>
     <% end %>
     </tbody>
@@ -33,5 +33,5 @@
   <article class="column">
 
 
-  </article>    
+  </article>
 </section>

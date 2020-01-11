@@ -19,7 +19,4 @@ defmodule RbAppWeb.FeedControllerTest do
         "  <h2>Welcome to the Global News Feed!</h2>\n<a class=\"button\" href=\"/feed\">" <>
         "Go to News Feed</a>   \n</section>\n\n    </main>\n    <script type=\"text/javascript\" src=\"/js/app.js\"></script>\n  </body>\n</html>\n"
       end
-
-
-  
 end
