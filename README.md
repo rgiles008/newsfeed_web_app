@@ -1,4 +1,4 @@
-# RbApp
+# News Feed Web Application
 
 An event microservice that interacts with NEWS API to process data and display them using Elixir/Phoenix.
 
