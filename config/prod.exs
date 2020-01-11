@@ -10,7 +10,7 @@ use Mix.Config
 # which you should run after static files are built and
 # before starting your production server.
 config :rb_app, RbAppWeb.Endpoint,
-  # http: [:inet6, port: System.get_env("PORT") || 4000],
+  http: [:inet6, port: System.get_env("PORT") || 4000],
   # url: [host: "example.com", port: 80],
   load_from_system_env: true,
   url: [scheme: "https", host: "bbnewsfeed.herokuapp.com", port: 443],
